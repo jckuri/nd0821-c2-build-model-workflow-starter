@@ -1,5 +1,13 @@
 # My Work in this Project
 
+## My Github Repository
+
+https://github.com/jckuri/nd0821-c2-build-model-workflow-starter
+
+## My W&B Project
+
+https://wandb.ai/jckuri/nyc_airbnb
+
 ## My Pipeline
 
 This is the pipeline I created:

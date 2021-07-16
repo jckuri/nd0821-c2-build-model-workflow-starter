@@ -1,3 +1,47 @@
+# My Work in this Project
+
+## My Pipeline
+
+This is the pipeline I created:
+![images/graph_view_of_pipeline.png](images/graph_view_of_pipeline.png)
+
+## The Commands I Used and their Results
+
+```
+mlflow run . -P steps=download,basic_cleaning
+
+mlflow run . -P steps="data_check"
+
+mlflow run . -P steps="data_split"
+
+mlflow run . -P steps="train_random_forest"
+
+mlflow run . -P steps=train_random_forest -P hydra_options="modeling.random_forest.max_depth=10,50,100 modeling.random_forest.n_estimators=100,200,500 modeling.max_tfidf_features=10,15,30 modeling.random_forest.max_features=0.1,0.33,0.5,0.75,1 -m"
+```
+
+```
+mlflow run . -P steps=test_regression_model
+
+wandb: Run summary:
+wandb:    r2 0.59861
+wandb:   mae 31.8185
+```
+
+```
+mlflow run https://github.com/jckuri/nd0821-c2-build-model-workflow-starter.git -v 1.0.0 -P hydra_options="etl.sample='sample2.csv'"
+
+Error.
+```
+
+```
+mlflow run https://github.com/jckuri/nd0821-c2-build-model-workflow-starter.git -v 1.0.1 -P hydra_options="etl.sample='sample2.csv'"
+
+2021-07-15 19:42:06,390 Scoring
+2021-07-15 19:42:06,640 Score: 0.6033462417450492
+2021-07-15 19:42:06,640 MAE: 32.16798157453936
+```
+
+
 # Build an ML Pipeline for Short-Term Rental Prices in NYC
 You are working for a property management company renting rooms and properties for short periods of 
 time on various rental platforms. You need to estimate the typical price for a given property based 
@@ -5,9 +49,6 @@ on the price of similar properties. Your company receives new data in bulk every
 to be retrained with the same cadence, necessitating an end-to-end pipeline that can be reused.
 
 In this project you will build such a pipeline.
-
-And this is the pipeline I created:
-![images/graph_view_of_pipeline.png](images/graph_view_of_pipeline.png)
 
 ## Table of contents
 

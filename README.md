@@ -35,8 +35,8 @@ wandb:    r2 0.59861
 wandb:   mae 31.8185
 ```
 
-Run the released pipeline on a new sample of data, with initial failure
-Run the released pipeline on a new sample of data, sample2.csv. The first version 1.0.0 (or similar) should fail, because there is a data problem in sample2.csv.
+Run the released pipeline on a new sample of data, with initial failure<br/>
+Run the released pipeline on a new sample of data, sample2.csv. The first version 1.0.0 (or similar) should fail, because there is a data problem in sample2.csv.<br/>
 
 ```
 mlflow run https://github.com/jckuri/nd0821-c2-build-model-workflow-starter.git -v 1.0.0 -P hydra_options="etl.sample='sample2.csv'"
@@ -44,8 +44,8 @@ mlflow run https://github.com/jckuri/nd0821-c2-build-model-workflow-starter.git 
 Error.
 ```
 
-Run the new release successfully
-Re-running with the new release should produce a new trained model.
+Run the new release successfully<br/>
+Re-running with the new release should produce a new trained model.<br/>
 
 ```
 mlflow run https://github.com/jckuri/nd0821-c2-build-model-workflow-starter.git -v 1.0.1 -P hydra_options="etl.sample='sample2.csv'"
